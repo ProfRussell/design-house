@@ -29,7 +29,7 @@ author: phlow
 # This URL is the main address for absolute links. Don't include a slash at the end.
 #
 url: 'https://phlow.github.io'
-baseurl: '/feeling-responsive'
+baseurl: '/feeling-responsive-v2'
 
 # This is for the editing function in _/includes/helper/improve_content.html
 # Leave it empty if your site is not on GitHub/GitHub Pages
