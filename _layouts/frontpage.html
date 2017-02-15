@@ -63,15 +63,15 @@ format: frontpage
         <div class="small-12 columns">
             {% for post in site.posts limit:1 %}
             {% if post.image.homepage %}
-            <p>
-                <a href="{{ post.url | absolute_url }}" title="{{ post.title | escape_once }}"><img width="970" src="{{ '/images/' | absolute_url }}{{ post.image.homepage }}" alt="{{ page.title | escape_once }}"></a>
-            </p>
+            <figure>
+                <a href="{{ post.url | absolute_url }}" title="{{ post.title | escape_once }}"><img width="1200" src="{{ '/images/' | absolute_url }}{{ post.image.homepage }}" alt="{{ page.title | escape_once }}"></a>
 
             {% if post.image.caption_url and post.image.caption %}
-            <p class="text-right caption">
+            <figcaption class="text-right caption">
                 <a href="{{ post.image.caption_url }}">{{ post.image.caption }}</a>
-            </p>
+            </figcaption>
             {% endif %}
+            </figure>
             {% else post.image.homepage == NULL %}
             <h2>{{ site.data.ui[site.lang].new_blog_entries | default: "New Blog Articles" }}</h2>
             {% endif %}
@@ -83,7 +83,7 @@ format: frontpage
         <div class="medium-6 columns">
             {% for post in site.posts limit:1 %}
             {% if post.subheadline %}<p class="subheadline">{{ post.subheadline }}</p>{% endif %}
-            <h2><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
+            <h2 class="t0"><a href="{{ post.url | absolute_url }}">{{ post.title }}</a></h2>
             <p>
                 {% if post.meta_description %}{{ post.meta_description | strip_html | escape }}{% else post.teaser %}{{ post.teaser | strip_html | escape }}{% endif %}
                 <a href="{{ post.url | absolute_url }}" title="Read {{ post.title | escape_once }}"><strong>{{ site.data.ui[site.lang].read_more | default: "Read More&nbsp;›" }}</strong></a>
@@ -92,7 +92,7 @@ format: frontpage
         </div>
 
         <div class="medium-6 columns">
-            <p><strong>{{ site.data.ui[site.lang].more_articles | default: "More Articles" }}</strong></p>
+            <p class="sans">{{ site.data.ui[site.lang].more_articles | default: "More Articles" }}</p>
             {% include list-posts entries='3' offset='1' %}
         </div>
     </div>

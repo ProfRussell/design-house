@@ -1,6 +1,6 @@
 - title: "Blog & Portfolio"
   link: /blog/
-  image: /images/widget-1-302x182.jpg
+  image: /images/widget-1-369x208.jpg
   blurb_markdown: |
     Every good portfolio website has a blog with fresh news, thoughts and develop&shy;ments of your activities.
 
@@ -9,7 +9,7 @@
   video_path:
 - title: "Why use this theme?"
   link: /info/
-  image: /images/start-video-feeling-responsive-302x182.jpg
+  image: /images/video-feeling-responsive-369x208.jpg
   blurb_markdown: |
     _Feeling Responsive_ has great features:
 
@@ -24,7 +24,7 @@
   video_path: https://www.youtube.com/embed/3b5zCFSmVvU
 - title: "Download Theme"
   link: https://github.com/Phlow/feeling-responsive-v2
-  image: /images/widget-github-303x182.jpg
+  image: /images/widget-github369x208.jpg
   blurb_markdown: |
     _Feeling Responsive_ is free and open source under the MIT license. Make it your own and start building. Grab the [Barebones Version](https://github.com/Phlow/feeling-responsive/tree/bare-bones-version) for a fresh start. Or learn how to use it with the [Educational Version](https://github.com/Phlow/feeling-responsive/tree/gh-pages) with sample posts and images. Then tell me via Twitter [@phlow](http://twitter.com/phlow).
   has_video: false

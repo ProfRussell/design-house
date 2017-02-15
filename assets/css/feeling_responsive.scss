@@ -13,11 +13,9 @@
 
 @import "feeling-responsive/01_colors/_color_scheme_{{ site.color_scheme }}";
 
-
-
-@import 'foundation-sites/scss/settings/settings';
-@import 'foundation-sites/scss/foundation';
-@import 'motion-ui/motion-ui';
+@import 'foundation-sites/scss/settings/settings',
+		'foundation-sites/scss/foundation',
+		'motion-ui/motion-ui';
 
 
 @include foundation-global-styles;
@@ -78,25 +76,27 @@ $font-family-monospace: 		{{ site.font.font-family-monospace }}
 $body-font-family: 				$font-family-serif;
 $header-font-family: 			$font-family-sans-serif;
 
-@import "feeling-responsive/04_typography/_00_typography_settings";
-@import "feeling-responsive/04_typography/general_typography";
-@import "feeling-responsive/04_typography/typography_article";
-@import "feeling-responsive/04_typography/typography_media_queries";
-@import "feeling-responsive/04_typography/typography_css_elements";
-@import "feeling-responsive/04_typography/syntax_highlighting";
-@import "feeling-responsive/04_typography/links";
-@import "feeling-responsive/04_typography/breadcrumb";
+@import 'feeling-responsive/04_typography/_00_typography_settings',
+		'feeling-responsive/04_typography/general_typography',
+		'feeling-responsive/04_typography/typography_article',
+		'feeling-responsive/04_typography/typography_media_queries',
+		'feeling-responsive/04_typography/typography_css_elements',
+		'feeling-responsive/04_typography/syntax_highlighting',
+		'feeling-responsive/04_typography/links',
+		'feeling-responsive/04_typography/breadcrumb';
 
 
 
 /* Layout
 ------------------------------------------------------------------- */
-@import 'feeling-responsive/05_layout/navigation';
-@import 'feeling-responsive/05_layout/search';
-@import 'feeling-responsive/05_layout/alerts';
-@import 'feeling-responsive/05_layout/meta';
-@import 'feeling-responsive/05_layout/masthead';
-@import 'feeling-responsive/05_layout/buttons';
-@import 'feeling-responsive/05_layout/social_media_icons';
-@import 'feeling-responsive/05_layout/footer';
-@import 'feeling-responsive/05_layout/jump_to_top';
+@import 'feeling-responsive/05_layout/navigation',
+		'feeling-responsive/05_layout/layout_elements.scss',
+		'feeling-responsive/05_layout/search',
+		'feeling-responsive/05_layout/alerts',
+		'feeling-responsive/05_layout/meta',
+		'feeling-responsive/05_layout/masthead',
+		'feeling-responsive/05_layout/buttons',
+		'feeling-responsive/05_layout/social_media_icons',
+		'feeling-responsive/05_layout/footer',
+		'feeling-responsive/05_layout/side-nav',
+		'feeling-responsive/05_layout/jump_to_top';
