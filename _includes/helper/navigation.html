@@ -63,6 +63,7 @@
 {% comment %} --- Right Side of Navigation ------------------------------------------------ {% endcomment %}
     <div class="top-bar-right">
       <ul  class="menu vertical medium-horizontal" data-responsive-menu="drilldown medium-dropdown">
+        <li><form action="{{ "/search/" | absolute_url }}" method="get"><input class="top-bar-search-input" accesskey="4" tabindex="1" type="search" placeholder="{{ site.data.ui[site.lang].search_input_placeholder }}" id="search-box" name="query"></form></li>
         {% for link in site.data.navigation %}
 
               {% if link.url contains 'http' %}
@@ -104,8 +105,7 @@
         {% endfor %}
     {% comment %} --- First loop finished ----------------------------------------------- {% endcomment %}
 
-        <li><input type="search" placeholder="Search"></li>
-        <li><button type="button" class="small radius button">Search</button></li>
+
       </ul>
     </div>
   </div>

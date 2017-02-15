@@ -14,7 +14,7 @@ sitemap: false
 ---
 {% include search %}
 
-<ul id="search-results" class="toc"></ul>
+<ul id="search-results" class="side-nav"></ul>
 
 <script>
   window.store = {
