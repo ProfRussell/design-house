@@ -5,33 +5,34 @@ format: frontpage
 <div id="header-home">
     <div class="row">
         <div class="small-12 columns">
-        </div><!-- /.medium-4.columns -->
-    </div><!-- /.row -->
-</div><!-- /#header-home -->
-
+        </div>
+    </div>
+</div>
 
 {% comment %}
 *
 * First check, if widget is empty or not by checking if there is a title
 *
 {% endcomment %}
-<div class="row t60">
-	{% if page.widget1.title %}
-		{% include helper/frontpage-widget.html widget=page.widget1 %}
-	{% endif %}
-
-
-	{% if page.widget2.title %}
-		{% include helper/frontpage-widget.html widget=page.widget2 %}
-	{% endif %}
-
-
-	{% if page.widget3.title %}
-		{% include helper/frontpage-widget.html widget=page.widget3 %}
-	{% endif %}
-</div><!-- /.row -->
-
-
+{% assign widgets = site.data.widgets %}
+{% assign container_class = "medium-4 columns frontpage-widget" %}
+{% if widgets.size > 0 %}
+  {% for widget in widgets %}
+    {% assign loopindex = forloop.index | modulo: 3 %}
+    {% if loopindex == 1 %}
+      <div class="row t60">
+        {% include helper/widget.html widget=widget container_class=container_class %}
+    {% elsif forloop.last %}
+        {% include helper/widget.html widget=widget container_class=container_class %}
+      </div>
+    {% elsif loopindex == 2 %}
+        {% include helper/widget.html widget=widget container_class=container_class %}
+    {% else %}
+        {% include helper/widget.html widget=widget container_class=container_class %}
+      </div>
+    {% endif %}
+  {% endfor %}
+{% endif %}
 
 {% comment %}
 *
@@ -47,11 +48,9 @@ format: frontpage
     <div class="row t60 b60">
         <div class="small-12 text-center columns">
             <a class="button large radius {{ page.callforaction.style }}" href="{{ url }}{{ page.callforaction.url }}"{% if page.callforaction.url contains 'http' %} target="_blank" {% endif %}>{{ page.callforaction.text }}</a>
-        </div><!-- /.small-12.columns -->
-    </div><!-- /.row -->
+        </div>
+    </div>
 {% endif %}
-
-
 
 {% comment %}
 *
@@ -77,9 +76,8 @@ format: frontpage
             <h2>{{ site.data.ui[site.lang].new_blog_entries | default: "New Blog Articles" }}</h2>
             {% endif %}
             {% endfor %}
-        </div><!-- /.small-12.columns -->
-    </div><!-- /.row -->
-
+        </div>
+    </div>
 
     <div class="row">
         <div class="medium-6 columns">
@@ -91,16 +89,14 @@ format: frontpage
                 <a href="{{ post.url | absolute_url }}" title="Read {{ post.title | escape_once }}"><strong>{{ site.data.ui[site.lang].read_more | default: "Read More&nbsp;›" }}</strong></a>
             </p>
             {% endfor %}
-        </div><!-- /.medium-5.columns -->
-
+        </div>
 
         <div class="medium-6 columns">
             <p><strong>{{ site.data.ui[site.lang].more_articles | default: "More Articles" }}</strong></p>
             {% include list-posts entries='3' offset='1' %}
-        </div><!-- /.medium-7.columns -->
-    </div><!-- /.row -->
+        </div>
+    </div>
 {% endunless %}
-
 
 {% comment %}
 *
@@ -110,4 +106,4 @@ format: frontpage
 
 <div class="row">
     {{ content }}
-</div><!-- /.row -->
+</div>
